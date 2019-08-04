@@ -8,9 +8,9 @@ adjustdata = adjustflat(imagedata,biasdata,flatdata);
 
 reimagedata = operateimage(adjustdata);
 lastdata = uint8(reimagedata);
-filtdata = medfilt2(lastdata,[5,5]);
+filtdata = medfilt2(lastdata,[3,3]);
 figure
 imshow(lastdata);
 figure 
 imshow(filtdata);
-fitswrite(filtdata,'myfile.fits');
+fitswrite(lastdata,'myfile.fits');
