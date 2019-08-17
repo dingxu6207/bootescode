@@ -7,6 +7,7 @@ Iba = sum(I(:))/(hang*lie);
 fenzi = imagedata - Bba;
 fenmu = I;
 you = Iba;
+
 adjustdata = (fenzi./fenmu).*you+Bba;
 
 

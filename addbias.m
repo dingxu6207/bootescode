@@ -1,4 +1,8 @@
 function biasdata = addbias()
+global minheng ;
+global maxheng ;
+global minlie;
+global maxlie;
 
 biasdata0 = fitsread('YFCf050026.fits','image');
 biasdata1 = fitsread('YFCf050027.fits','image');
@@ -11,4 +15,4 @@ biasdata7 = fitsread('YFCf050033.fits','image');
 biasdata = (biasdata0 + biasdata1 + biasdata2 + biasdata3 +...
     biasdata4 + biasdata5 + biasdata6 + biasdata7 )/8;
 
-biasdata = biasdata(100:1000,100:1000);
+biasdata = biasdata(minheng:maxheng,minlie:maxlie);

@@ -2,15 +2,8 @@ clc;clear;close all;
 warning off all;
 
 %图像裁剪的全局变量
-global minheng ;
-global maxheng ;
-global minlie;
-global maxlie;
-
-minheng = 101;
-maxheng = 1000;
-minlie = 101;
-maxlie = 1000;
+global  = 100;
+global zuoxia = 1000;
 
 %本底和平场
 biasdata = addbias();
@@ -18,7 +11,7 @@ flatdata = addflat();
 
 %读取图像，拉伸对比度
 imagedata = fitsread('YFCf050169.fits','image');
-imagedata = imagedata(minheng:maxheng,minlie:maxlie);
+imagedata = imagedata(100:1000,100:1000);
 adjustdata = adjustflat(imagedata,biasdata,flatdata);
 reimagedata = operateimage(adjustdata);
 lastdata = uint8(reimagedata);
@@ -29,8 +22,7 @@ backgroud = solvebackground(reimagedata);
 
 partcount(filtdata);
 
-allpartcount(filtdata);
-
+   
 
 %显示图像
 figure 

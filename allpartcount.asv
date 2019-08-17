@@ -1,0 +1,12 @@
+function allpartcount(filtdata)
+A = zeros(300,300);
+daA = zeros(900,900);
+
+for row = 1:3
+    for col = 1:3
+        A = filtdata(((row-1)*300+1):(row)*300,((col-1)*300+1):(col)*300);
+    end
+end
+end
+
+

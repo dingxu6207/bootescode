@@ -1,4 +1,8 @@
 function flatdata = addflat()
+global minheng ;
+global maxheng ;
+global minlie;
+global maxlie;
 
 flatdata0 = fitsread('YFCf050061.fits','image');
 flatdata1 = fitsread('YFCf050062.fits','image');
@@ -11,4 +15,4 @@ flatdata7 = fitsread('YFCf050068.fits','image');
 flatdata = (flatdata0 + flatdata1 + flatdata2 + flatdata3 +...
     flatdata4 + flatdata5 + flatdata6 + flatdata7 )/8;
 
-flatdata = flatdata(100:1000,100:1000);
+flatdata = flatdata(minheng:maxheng,minlie:maxlie);
